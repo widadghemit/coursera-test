@@ -1,1 +1,93 @@
+/* Styles de base pour l'ordinateur (largeur >= 992px) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
 
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px;
+}
+
+.box {
+    background-color: #dce4ec;  /* Couleur d'arrière-plan de chaque section */
+    padding: 20px;
+    border: 1px solid black;
+    width: 32%;  /* Chaque section prend 32% de la largeur de la page */
+    box-sizing: border-box;
+    margin-right: 2%;  /* Espacement horizontal entre les sections */
+    position: relative;  /* Pour pouvoir positionner les titres en absolu */
+}
+
+/* Titre positionné en haut à droite */
+.title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333; /* Couleur d'arrière-plan du titre */
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.5em;
+}
+
+/* Empêche que le texte touche le titre */
+p {
+    padding-top: 40px;  /* Espacement du texte pour qu'il n'empiète pas sur le titre */
+}
+
+/* Media query pour la version tablette (768px à 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .container {
+        flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    }
+
+    .box {
+        width: 48%;  /* Les sections prennent 48% de la largeur */
+        margin-right: 2%; /* Un peu d'espace entre les sections */
+        margin-bottom: 20px; /* Espacement vertical entre les sections */
+    }
+
+    .box:nth-child(3) {
+        width: 100%;  /* La troisième section prend toute la largeur */
+    }
+}
+
+/* Media query pour la version mobile (≤ 767px) */
+@media (max-width: 767px) {
+    header {
+        padding: 15px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        flex-direction: column; /* Les sections sont empilées */
+    }
+
+    .box {
+        width: 100%;  /* Chaque section prend toute la largeur */
+        margin-bottom: 15px;  /* Espacement vertical entre les sections */
+    }
+
+    .title {
+        font-size: 1.2em;  /* Réduire la taille des titres */
+    }
+}
